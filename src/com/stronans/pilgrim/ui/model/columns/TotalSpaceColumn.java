@@ -1,0 +1,46 @@
+package com.stronans.pilgrim.ui.model.columns;
+
+import java.text.NumberFormat;
+
+import com.stronans.pilgrim.data.model.Alignment;
+import com.stronans.pilgrim.data.model.Configuration;
+import com.stronans.pilgrim.data.model.interfaces.Drives;
+import com.stronans.pilgrim.data.model.interfaces.Items;
+import com.stronans.pilgrim.ui.model.columns.abstracts.Column;
+
+public class TotalSpaceColumn extends Column
+{
+	private static final String COLUMN_NAME = "Total Space";
+
+	public TotalSpaceColumn(int index, Alignment alignment)
+	{
+		super(COLUMN_NAME, index, alignment);
+	}
+
+	public TotalSpaceColumn(int index)
+	{
+		this(index, Alignment.RIGHT);
+	}
+
+	@Override
+	public String getDisplay(Items item)
+	{
+		long size = 0;
+
+		if(item instanceof Drives)
+		{
+			Drives drive = (Drives)item;
+			size = drive.getTotalSpace();
+
+			switch (Configuration.getScale())
+			{
+			case SHOWSCALED:
+				break;
+			}
+		}
+		
+		NumberFormat display = NumberFormat.getInstance();
+		
+		return display.format(size);
+	}
+}
