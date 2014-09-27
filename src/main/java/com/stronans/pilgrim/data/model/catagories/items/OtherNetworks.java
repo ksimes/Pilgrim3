@@ -1,4 +1,4 @@
-package com.stronans.pilgrim.data.model.items;
+package com.stronans.pilgrim.data.model.catagories.items;
 /*
  * Pilgrim Explorer III
  *
@@ -19,25 +19,21 @@ import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
  * @author SimonKing
  *
  */
-public class Network extends ItemSpecifier implements Items
+public class OtherNetworks extends ItemSpecifier implements Items
 {
-	public static final String LOCAL_NETWORK = "Local Network";
+	public static final String OTHER_NETWORK = "Other Networks";
 	private String description;
 	
-	public Network(String name)
+	public OtherNetworks(String name)
 	{
 		super(null, null, ItemType.NETWORK, StaticData.getIcon(StaticData.NETWORK));
 		if(name == null)
-		{
-			this.description = LOCAL_NETWORK;
-		}
+			this.description = OTHER_NETWORK;
 		else
-		{
-			this.description = LOCAL_NETWORK + " (" + name + ")";
-		}
+			this.description = OTHER_NETWORK + " (" + name + ")";
 	}
 
-	public Network()
+	public OtherNetworks()
 	{
 		this(null);
 	}
@@ -105,6 +101,7 @@ public class Network extends ItemSpecifier implements Items
 	@Override
 	public boolean hasTreeChildren()
 	{
+		// TODO Auto-generated method stub
 		return false;
 	}
 }

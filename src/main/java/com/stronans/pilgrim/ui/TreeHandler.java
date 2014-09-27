@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
-import com.stronans.pilgrim.data.model.items.Overview;
+import com.stronans.pilgrim.data.model.catagories.Overview;
 
 public class TreeHandler {
     // private static final Logger logger = Logger.getLogger(TreeHandler.class);

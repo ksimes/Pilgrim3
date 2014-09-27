@@ -7,6 +7,7 @@ package com.stronans.pilgrim;
 
 import com.stronans.pilgrim.data.model.Configuration;
 import com.stronans.pilgrim.data.model.StaticData;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
@@ -14,6 +15,7 @@ import org.eclipse.swt.widgets.Shell;
 import java.util.Properties;
 
 public final class Startup {
+    private static final Logger logger = Logger.getLogger(Startup.class);
 
     /**
      * Creates and starts the SWT message processing loop.

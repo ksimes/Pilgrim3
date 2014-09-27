@@ -5,6 +5,7 @@ package com.stronans.pilgrim.ui;
  * Copyright  1998-2014  Cathcart Software Limited.  All Rights Reserved.
  */
 
+import org.apache.log4j.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.events.SelectionEvent;
@@ -20,11 +21,13 @@ import org.eclipse.swt.widgets.Shell;
 import com.stronans.pilgrim.data.model.Configuration;
 import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
-import com.stronans.pilgrim.data.model.items.Overview;
+import com.stronans.pilgrim.data.model.catagories.Overview;
 import com.stronans.pilgrim.ui.interfaces.NodeChange;
 
 public class MainPanel implements NodeChange
 {
+    private static final Logger logger = Logger.getLogger(MainPanel.class);
+
 	private CTabFolder tabFolder;
 	private StatusBar statusBar;
 	private Shell shell;
@@ -51,8 +54,7 @@ public class MainPanel implements NodeChange
 		tabFolder.addSelectionListener(new TabSelection());
 
 		// Setup all previous loaded windows
-		Window window = new Window(tabFolder);
-		window.addListener(this);
+		Window window = new Window(tabFolder, this);
 		window.setTo(new Overview());
 		
 		// Setup the status bar
@@ -127,9 +129,9 @@ public class MainPanel implements NodeChange
 		StringBuffer result = new StringBuffer(20);
 
 		result.append("Pilgrim III - User ");
-		result.append(StaticData.getEnvironment(StaticData.USERDOMAIN));
+		result.append(StaticData.getEnvironment(Overview.USERDOMAIN));
 		result.append("\\");
-		result.append(StaticData.getEnvironment(StaticData.USERNAME));
+		result.append(StaticData.getEnvironment(Overview.USERNAME));
 		result.append(", Current view - ");
 		result.append(specifier.getTabToolTip());
 		result.append("");

@@ -10,6 +10,7 @@ libraryDependencies ++= Seq(
   "log4j" % "log4j" % "1.2.16",
 //  "org.eclipse.swt" % "org.eclipse.swt.win32.win32.x86_64" % "4.4",
   "junit" % "junit" % "4.11" % "test",
+  "com.google.guava" % "guava" % "18.0",
   "com.jayway.jsonpath" % "json-path-assert" % "0.8.1" % "test"
 )
 

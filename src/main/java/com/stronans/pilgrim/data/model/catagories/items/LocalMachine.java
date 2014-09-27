@@ -1,4 +1,4 @@
-package com.stronans.pilgrim.data.model.items;
+package com.stronans.pilgrim.data.model.catagories.items;
 /*
  * Pilgrim Explorer III
  *
@@ -12,6 +12,7 @@ import java.util.List;
 import com.stronans.pilgrim.data.model.ItemType;
 import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
+import com.stronans.pilgrim.data.model.catagories.Drives;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
 import com.stronans.pilgrim.ui.model.columns.DescriptionColumn;
@@ -63,13 +64,13 @@ public class LocalMachine extends ItemSpecifier implements Items
 	@Override
 	public List<Items> getTableListing(FileFilter filter)
 	{
-		return StaticData.getDriveListAsItems();
+		return Drives.getDriveListAsItems();
 	}
 
 	@Override
 	public List<ItemSpecific> getTreeListing()
 	{
-		return StaticData.getDriveList();
+		return Drives.getDriveList();
 	}
 
 	@Override

@@ -25,7 +25,7 @@ public class Window
 	private Composite frame;
 	private Set<NodeChange> listeners = new HashSet<NodeChange>();
 
-	public Window(CTabFolder tabFolder)
+	public Window(CTabFolder tabFolder, NodeChange listener)
 	{
 		int style = SWT.NONE;
 		if(tabFolder.getItemCount() > 0)
@@ -43,7 +43,11 @@ public class Window
 
 		tree = new TreeHandler(this);
 		table = new TableHandler(this);
-	}
+
+        if(listener != null) {
+            listeners.add(listener);
+        }
+    }
 
 	public void addListener(NodeChange listener)
 	{

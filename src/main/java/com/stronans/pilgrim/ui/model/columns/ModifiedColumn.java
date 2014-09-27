@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.data.model.items.Item;
+import com.stronans.pilgrim.data.model.catagories.items.Item;
 import com.stronans.pilgrim.ui.model.columns.abstracts.Column;
 
 public class ModifiedColumn extends Column
