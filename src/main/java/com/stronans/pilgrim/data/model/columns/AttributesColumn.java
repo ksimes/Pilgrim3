@@ -1,9 +1,9 @@
-package com.stronans.pilgrim.ui.model.columns;
+package com.stronans.pilgrim.data.model.columns;
 
 import com.stronans.pilgrim.data.model.Alignment;
 import com.stronans.pilgrim.data.model.interfaces.Files;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.abstracts.Column;
+import com.stronans.pilgrim.data.model.columns.abstracts.Column;
 
 public class AttributesColumn extends Column
 {

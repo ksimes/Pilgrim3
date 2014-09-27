@@ -7,6 +7,7 @@ package com.stronans.pilgrim;
 
 import com.stronans.pilgrim.data.model.Configuration;
 import com.stronans.pilgrim.data.model.StaticData;
+import com.stronans.pilgrim.ui.UIConfiguration;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.eclipse.swt.widgets.Display;
@@ -27,9 +28,9 @@ public final class Startup {
         new StaticData(display);
         // read in the current set of folder configurations plus any display characteristics
         // such as layout position or columns in sub-windows.
-        new Configuration(display);
+        new UIConfiguration(display);
 
-        Shell shell = Configuration.getShell();
+        Shell shell = UIConfiguration.getShell();
 
         shell.open();
 

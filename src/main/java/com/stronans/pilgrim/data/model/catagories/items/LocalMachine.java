@@ -6,34 +6,25 @@ package com.stronans.pilgrim.data.model.catagories.items;
  */
 
 import java.io.FileFilter;
-import java.util.Arrays;
 import java.util.List;
 
 import com.stronans.pilgrim.data.model.ItemType;
 import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
-import com.stronans.pilgrim.data.model.catagories.Drives;
+import com.stronans.pilgrim.data.model.catagories.DriveCategory;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.DescriptionColumn;
-import com.stronans.pilgrim.ui.model.columns.FreeSpaceColumn;
-import com.stronans.pilgrim.ui.model.columns.NameColumn;
-import com.stronans.pilgrim.ui.model.columns.PercentageFullColumn;
-import com.stronans.pilgrim.ui.model.columns.TotalSpaceColumn;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
 /**
  * @author SimonKing
  *
  */
-public class LocalMachine extends ItemSpecifier implements Items
+public final class LocalMachine extends ItemSpecifier implements Items
 {
 	public static final String MY_COMPUTER = "My Computer";
 	public static final String DEFAULT_SPECIFER = "*";
-	private String description;
-	
-	ColumnInterface columns[] = { new NameColumn(0), new DescriptionColumn(1), new TotalSpaceColumn(2), 
-			new FreeSpaceColumn(3), new PercentageFullColumn(4)};
+	private final String description;
 	
 	public LocalMachine(String Name)
 	{
@@ -64,13 +55,13 @@ public class LocalMachine extends ItemSpecifier implements Items
 	@Override
 	public List<Items> getTableListing(FileFilter filter)
 	{
-		return Drives.getDriveListAsItems();
+		return DriveCategory.getDriveListAsItems();
 	}
 
 	@Override
 	public List<ItemSpecific> getTreeListing()
 	{
-		return Drives.getDriveList();
+		return DriveCategory.getDriveList();
 	}
 
 	@Override
@@ -86,7 +77,7 @@ public class LocalMachine extends ItemSpecifier implements Items
 	@Override
 	public List<ColumnInterface> getColumns()
 	{
-		return Arrays.asList(columns);
+		return DriveCategory.getColumns();
 	}
 
 	/* (non-Javadoc)

@@ -14,9 +14,9 @@ import com.stronans.pilgrim.data.model.catagories.items.Network;
 import com.stronans.pilgrim.data.model.catagories.items.OtherNetworks;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.DescriptionColumn;
-import com.stronans.pilgrim.ui.model.columns.NameColumn;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.DescriptionColumn;
+import com.stronans.pilgrim.data.model.columns.NameColumn;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 import org.apache.log4j.Logger;
 
 import java.io.FileFilter;
@@ -24,9 +24,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Overview extends ItemSpecifier implements Items
+public final class OverviewCategory extends ItemSpecifier implements Items
 {
-    private static final Logger logger = Logger.getLogger(Overview.class);
+    private static final Logger logger = Logger.getLogger(OverviewCategory.class);
 
     public static final String OS_PROPERTY = "os.name";
     public static final String OS_VER_PROPERTY = "os.version";
@@ -38,11 +38,11 @@ public class Overview extends ItemSpecifier implements Items
 
 	private static final String OVERVIEW = "Overview";
 	
-	private ColumnInterface columns[] = { new NameColumn(0), new DescriptionColumn(1)};
+	private final ColumnInterface columns[] = { new NameColumn(0), new DescriptionColumn(1)};
 	
 	private List<Items> items = new ArrayList<>();
 	
-	public Overview()
+	public OverviewCategory()
 	{
 		super(null, null, ItemType.OVERVIEW, StaticData.getIcon(StaticData.OVERVIEW));
 

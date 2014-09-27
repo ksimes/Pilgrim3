@@ -8,7 +8,6 @@ package com.stronans.pilgrim.data.model.catagories.items;
 import java.io.File;
 import java.io.FileFilter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.swing.filechooser.FileSystemView;
@@ -16,37 +15,33 @@ import javax.swing.filechooser.FileSystemView;
 import com.stronans.pilgrim.data.model.ItemType;
 import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
+import com.stronans.pilgrim.data.model.catagories.FolderCategory;
 import com.stronans.pilgrim.data.model.filters.ApplySpecifier;
 import com.stronans.pilgrim.data.model.filters.FoldersOnly;
 import com.stronans.pilgrim.data.model.interfaces.Drives;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.AttributesColumn;
-import com.stronans.pilgrim.ui.model.columns.DescriptionColumn;
-import com.stronans.pilgrim.ui.model.columns.ModifiedColumn;
-import com.stronans.pilgrim.ui.model.columns.NameColumn;
-import com.stronans.pilgrim.ui.model.columns.SizeColumn;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
-public class Drive extends ItemSpecifier implements Drives {
-    private final ColumnInterface columns[] = {new NameColumn(0), new DescriptionColumn(1),
-            new SizeColumn(2), new ModifiedColumn(3), new AttributesColumn(4)};
-
-    private String description;
-    private String name;
-    private File item;
-    private long total, free;
+public final class Drive extends ItemSpecifier implements Drives {
+    private final String description;
+    private final String name;
+    private final File item;
+    private final long total, free;
 
     public Drive(File item, String specifier) {
         super(item.getAbsolutePath(), specifier, ItemType.DRIVES, StaticData.getIcon(StaticData.DRIVE));
         this.item = item;
 
         description = FileSystemView.getFileSystemView().getSystemTypeDescription(item);
-        name = FileSystemView.getFileSystemView().getSystemDisplayName(item);
+        String tempName = FileSystemView.getFileSystemView().getSystemDisplayName(item);
 
-        if (name.equals("")) {
+        if (tempName.equals("")) {
             name = description;
+        } else {
+            name = tempName;
         }
+
 
         total = item.getTotalSpace();
         free = item.getUsableSpace();
@@ -145,6 +140,6 @@ public class Drive extends ItemSpecifier implements Drives {
 
     @Override
     public List<ColumnInterface> getColumns() {
-        return Arrays.asList(columns);
+        return FolderCategory.getColumns();
     }
 }

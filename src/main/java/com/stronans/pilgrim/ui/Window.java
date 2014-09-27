@@ -5,17 +5,16 @@ package com.stronans.pilgrim.ui;
  * Copyright  1998-2014  Cathcart Software Limited.  All Rights Reserved.
  */
 
-import java.util.HashSet;
-import java.util.Set;
-
+import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
+import com.stronans.pilgrim.ui.interfaces.NodeChange;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 
-import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
-import com.stronans.pilgrim.ui.interfaces.NodeChange;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Window
 {
@@ -23,7 +22,7 @@ public class Window
 	private TreeHandler tree;
 	private TableHandler table;
 	private Composite frame;
-	private Set<NodeChange> listeners = new HashSet<NodeChange>();
+	private Set<NodeChange> listeners = new HashSet<>();
 
 	public Window(CTabFolder tabFolder, NodeChange listener)
 	{

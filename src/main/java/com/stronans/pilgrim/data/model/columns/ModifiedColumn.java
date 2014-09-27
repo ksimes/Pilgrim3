@@ -1,11 +1,11 @@
-package com.stronans.pilgrim.ui.model.columns;
+package com.stronans.pilgrim.data.model.columns;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.stronans.pilgrim.data.model.interfaces.Items;
 import com.stronans.pilgrim.data.model.catagories.items.Item;
-import com.stronans.pilgrim.ui.model.columns.abstracts.Column;
+import com.stronans.pilgrim.data.model.columns.abstracts.Column;
 
 public class ModifiedColumn extends Column
 {

@@ -10,7 +10,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
 
-public class StatusBar extends Composite
+public final class StatusBar extends Composite
 {
 
 	public StatusBar(Composite parent, int flags)
@@ -30,5 +30,4 @@ public class StatusBar extends Composite
 	{
 		return super.computeSize(arg0, 20, arg2);
 	}
-
 }

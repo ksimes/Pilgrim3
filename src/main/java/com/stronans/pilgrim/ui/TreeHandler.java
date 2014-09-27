@@ -7,6 +7,7 @@ package com.stronans.pilgrim.ui;
 
 import java.util.List;
 
+import com.stronans.pilgrim.data.model.catagories.OverviewCategory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -18,7 +19,6 @@ import org.eclipse.swt.widgets.TreeItem;
 
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
-import com.stronans.pilgrim.data.model.catagories.Overview;
 
 public class TreeHandler {
     // private static final Logger logger = Logger.getLogger(TreeHandler.class);
@@ -41,7 +41,7 @@ public class TreeHandler {
     }
 
     private void buildRoots() {
-        Overview overView = new Overview();
+        OverviewCategory overView = new OverviewCategory();
         TreeItem iItem = new TreeItem(tree, SWT.NONE);
         iItem.setData(overView);
         iItem.setText(overView.getName());

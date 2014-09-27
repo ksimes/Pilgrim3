@@ -20,21 +20,27 @@ import com.stronans.pilgrim.data.model.interfaces.Files;
  * At the moment uses Swing facilities to access file on disk for some of this information, but in the near future
  * will use Native routines for Windows/Linux/etc. written inhouse.
  */
-public class Item implements Files {
+public final class Item implements Files {
     private static final Logger logger = Logger.getLogger(Item.class);
 
-    private String description;
-    private File file;
-    private Date lastModified;
-    private Image icon;
+    private final String description;
+    private final File file;
+    private final Date lastModified;
+    private final Image icon;
 
     public Item(File file) {
         this.file = file;
-        description = FileSystemView.getFileSystemView().getSystemTypeDescription(file);
-        if (description == null)
+        String tempDescription = FileSystemView.getFileSystemView().getSystemTypeDescription(file);
+        if (tempDescription == null) {
             description = "";
+        }
+        else
+        {
+            description = tempDescription;
+        }
 
         lastModified = new Date(file.lastModified());
+        icon = null;
     }
 
     @Override
@@ -73,12 +79,5 @@ public class Item implements Files {
      */
     public Image getIcon() {
         return icon;
-    }
-
-    /**
-     * @param icon the icon to set
-     */
-    public void setIcon(Image icon) {
-        this.icon = icon;
     }
 }

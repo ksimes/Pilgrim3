@@ -5,6 +5,7 @@ package com.stronans.pilgrim.ui;
  * Copyright  1998-2014  Cathcart Software Limited.  All Rights Reserved.
  */
 
+import com.stronans.pilgrim.data.model.catagories.OverviewCategory;
 import org.apache.log4j.Logger;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -21,16 +22,15 @@ import org.eclipse.swt.widgets.Shell;
 import com.stronans.pilgrim.data.model.Configuration;
 import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
-import com.stronans.pilgrim.data.model.catagories.Overview;
 import com.stronans.pilgrim.ui.interfaces.NodeChange;
 
-public class MainPanel implements NodeChange
+public final class MainPanel implements NodeChange
 {
     private static final Logger logger = Logger.getLogger(MainPanel.class);
 
-	private CTabFolder tabFolder;
-	private StatusBar statusBar;
-	private Shell shell;
+	private final CTabFolder tabFolder;
+	private final StatusBar statusBar;
+	private final Shell shell;
 	private ItemSpecifier currentSpecifier;
 
 	public MainPanel(Shell shell)
@@ -45,7 +45,7 @@ public class MainPanel implements NodeChange
 		tabData.grabExcessVerticalSpace = true;
 
 		tabFolder = new CTabFolder(shell, SWT.CLOSE);
-		Display display = Configuration.getGlobalDisplay();
+		Display display = UIConfiguration.getGlobalDisplay();
 		tabFolder.setSelectionBackground(new Color[]{display.getSystemColor(SWT.COLOR_DARK_GRAY), display.getSystemColor(SWT.COLOR_GRAY)}, new int[]{100}, true);
 		tabFolder.setLayoutData(tabData);
 		tabFolder.setLayout(new FillLayout());
@@ -55,7 +55,7 @@ public class MainPanel implements NodeChange
 
 		// Setup all previous loaded windows
 		Window window = new Window(tabFolder, this);
-		window.setTo(new Overview());
+		window.setTo(new OverviewCategory());
 		
 		// Setup the status bar
 		statusBar = new StatusBar(shell, SWT.NONE);
@@ -129,9 +129,9 @@ public class MainPanel implements NodeChange
 		StringBuffer result = new StringBuffer(20);
 
 		result.append("Pilgrim III - User ");
-		result.append(StaticData.getEnvironment(Overview.USERDOMAIN));
+		result.append(StaticData.getEnvironment(OverviewCategory.USERDOMAIN));
 		result.append("\\");
-		result.append(StaticData.getEnvironment(Overview.USERNAME));
+		result.append(StaticData.getEnvironment(OverviewCategory.USERNAME));
 		result.append(", Current view - ");
 		result.append(specifier.getTabToolTip());
 		result.append("");

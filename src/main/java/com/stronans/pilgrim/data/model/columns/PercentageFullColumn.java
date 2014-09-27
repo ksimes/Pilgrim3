@@ -1,8 +1,8 @@
-package com.stronans.pilgrim.ui.model.columns;
+package com.stronans.pilgrim.data.model.columns;
 
 import com.stronans.pilgrim.data.model.interfaces.Drives;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.abstracts.Column;
+import com.stronans.pilgrim.data.model.columns.abstracts.Column;
 
 public class PercentageFullColumn extends Column
 {
@@ -20,7 +20,7 @@ public class PercentageFullColumn extends Column
 		if(item instanceof Drives)
 		{
 			Drives drive = (Drives)item;
-			str = "" + drive.percentageFull(); 
+			str = "" + drive.percentageFull() + "%";
 		}
 		return str;
 	}

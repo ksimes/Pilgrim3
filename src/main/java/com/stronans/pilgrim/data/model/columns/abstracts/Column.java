@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.stronans.pilgrim.ui.model.columns.abstracts;
+package com.stronans.pilgrim.data.model.columns.abstracts;
 
 import com.stronans.pilgrim.data.model.Alignment;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
 /**
  * @author SimonKing
@@ -56,7 +56,7 @@ public abstract class Column implements ColumnInterface
 	}
 
 	/* (non-Javadoc)
-	 * @see com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface#getAlignment()
+	 * @see com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface#getAlignment()
 	 */
 	@Override
 	public Alignment getAlignment()

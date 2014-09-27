@@ -12,5 +12,4 @@ public interface Items
 	String getName();
 	String getDescription();
 	Image getIcon();
-
 }

@@ -1,4 +1,4 @@
-package com.stronans.pilgrim.ui.model.columns.interfaces;
+package com.stronans.pilgrim.data.model.columns.interfaces;
 
 import com.stronans.pilgrim.data.model.Alignment;
 import com.stronans.pilgrim.data.model.interfaces.Items;

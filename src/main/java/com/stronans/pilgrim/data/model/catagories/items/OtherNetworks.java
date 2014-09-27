@@ -13,16 +13,16 @@ import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
 /**
  * @author SimonKing
  *
  */
-public class OtherNetworks extends ItemSpecifier implements Items
+public final class OtherNetworks extends ItemSpecifier implements Items
 {
 	public static final String OTHER_NETWORK = "Other Networks";
-	private String description;
+	private final String description;
 	
 	public OtherNetworks(String name)
 	{

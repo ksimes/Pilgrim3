@@ -40,29 +40,11 @@ public abstract class ItemSpecifier implements ItemSpecific
 	}
 
 	/**
-	 * @param path
-	 *            the path to set
-	 */
-	public void setPath(String path)
-	{
-		this.path = path;
-	}
-
-	/**
 	 * @return the specifier
 	 */
 	public String getSpecifier()
 	{
 		return specifier;
-	}
-
-	/**
-	 * @param specifier
-	 *            the specifier to set
-	 */
-	public void setSpecifier(String specifier)
-	{
-		this.specifier = specifier;
 	}
 
 	/**
@@ -93,13 +75,5 @@ public abstract class ItemSpecifier implements ItemSpecific
 	public Image getIcon()
 	{
 		return icon;
-	}
-
-	/**
-	 * @param icon the icon to set
-	 */
-	public void setIcon(Image icon)
-	{
-		this.icon = icon;
 	}
 }

@@ -9,16 +9,14 @@ import java.io.FileFilter;
 import java.util.List;
 
 import com.stronans.pilgrim.data.model.ItemType;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
 public interface ItemSpecific extends Items
 {
 	// Fully specified path to this location 
 	public String getPath();
-	public void setPath(String path);
 	// Regular expression specifying the listing filter
 	public String getSpecifier();
-	public void setSpecifier(String specifier);
 	public String getDescription();
 	// What text goes into the tab
 	public String getTabDescription();

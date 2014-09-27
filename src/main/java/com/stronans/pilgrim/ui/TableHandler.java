@@ -17,12 +17,12 @@ import org.eclipse.swt.widgets.TableItem;
 
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
-public class TableHandler
+public final class TableHandler
 {
-	private Table table;
-	private Window window;
+	private final Table table;
+	private final Window window;
 
 	public TableHandler(Window window)
 	{

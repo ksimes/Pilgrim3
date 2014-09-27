@@ -13,7 +13,7 @@ import com.stronans.pilgrim.data.model.StaticData;
 import com.stronans.pilgrim.data.model.abstracts.ItemSpecifier;
 import com.stronans.pilgrim.data.model.interfaces.ItemSpecific;
 import com.stronans.pilgrim.data.model.interfaces.Items;
-import com.stronans.pilgrim.ui.model.columns.interfaces.ColumnInterface;
+import com.stronans.pilgrim.data.model.columns.interfaces.ColumnInterface;
 
 /**
  * @author SimonKing
